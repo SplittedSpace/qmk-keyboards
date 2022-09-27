@@ -1,0 +1,5 @@
+obj_*
+*.hex
+*.elf
+*.map
+.DS_Store
