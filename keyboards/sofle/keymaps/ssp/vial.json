@@ -3,6 +3,7 @@
     "vendorId": "0xFC32",
     "productId": "0x0287",
     "matrix": { "rows": 10, "cols": 6 },
+    "lighting": "vialrgb",
     "layouts": {
         "keymap": [
             {
