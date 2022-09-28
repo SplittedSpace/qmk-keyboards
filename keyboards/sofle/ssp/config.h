@@ -5,32 +5,27 @@
 #define PRODUCT_ID      0x0287
 #define DEVICE_VER      0x0007
 #define MANUFACTURER    SplittedSpace
-#define PRODUCT         Sofle // VIA version for this PCB is incorrect for the bottom row
+#define PRODUCT         Sofle
 
-// Set which side is master
 //#define EE_HANDS //Use this instead for EEPROM setting
 #define MASTER_LEFT
 
-// Key matrix
-
-#define MATRIX_ROWS 10 // Rows are doubled-up
-#define MATRIX_COLS 7 // Added extra column for rotary encoder VIA mapping.
+#define MATRIX_ROWS 10
+#define MATRIX_COLS 6
 
 #define MATRIX_ROW_PINS { C6, D7, E6, B4, B5 }
-// #define MATRIX_COL_PINS { B6, B2, B3, B1, F7, F6, C7 } //C7 is unused on the MCU. It is needed for the encoder key matrix in via.
-#define MATRIX_COL_PINS { F6, F7, B1, B3, B2, B6, C7 } //C7 is unused on the MCU. It is needed for the encoder key matrix in via.
-// #define MATRIX_ROW_PINS_RIGHT { C6, D7, E6, B4, B5 }
-// #define MATRIX_COL_PINS_RIGHT { F6, F7, B1, B3, B2, B6, C7 } //C7 is unused on the MCU. It is needed for the encoder key matrix in via.
+#define MATRIX_COL_PINS { F6, F7, B1, B3, B2, B6 }
 #define DIODE_DIRECTION COL2ROW
 
 #define DEBOUNCE 5
 
-// Encoder support
-#define ENCODERS_PAD_A { F5 }
-#define ENCODERS_PAD_B { F4 }
-#define ENCODERS_PAD_A_RIGHT { F4 }
-#define ENCODERS_PAD_B_RIGHT { F5 }
-#define ENCODER_RESOLUTION 2
+#ifdef ENCODER_ENABLE
+    #define ENCODERS_PAD_A { F4 }
+    #define ENCODERS_PAD_B { F5 }
+    #define ENCODERS_PAD_A_RIGHT { F5 }
+    #define ENCODERS_PAD_B_RIGHT { F4 }
+    #define ENCODER_RESOLUTION 4
+#endif
 
 #define TAP_CODE_DELAY 10
 #define TAPPING_TOGGLE 2 //Tap TT twice to toggle layer
@@ -41,11 +36,7 @@
 #define SERIAL_USE_MULTI_TRANSACTION
 #define SOFT_SERIAL_PIN D2
 
-// Disabled to save space
-#define NO_ACTION_ONESHOT //Save 244 bytes
-#define NO_RESET //Save 40 bytes
 
-// OLED settings
 #ifdef OLED_ENABLE
 	#define OLED_TIMEOUT 80000 //120000 = 2 minutes in ms.
 	#define OLED_BRIGHTNESS 90 // Default 100.
@@ -53,13 +44,11 @@
 	#define SPLIT_OLED_ENABLE //Synx on/off OLED state between halves (+100).
 #endif
 
-// Combo settings
 #ifdef COMBO_ENABLE
 	#define COMBO_COUNT 1 //Number of tap combos used
 	#define COMBO_TERM 400 //Default combo time is 200ms. This is the time delay allowed between deleting each whole word with shift-backspace.
 #endif
 
-// LEDS
 #ifdef RGBLIGHT_ENABLE
     #define RGB_DI_PIN D3
     #define RGBLED_NUM 72
@@ -110,6 +99,38 @@
     #define RGB_MATRIX_FRAMEBUFFER_EFFECTS
     #define RGB_MATRIX_SPLIT {36,36}
     #define SPLIT_TRANSPORT_MIRROR
-
+    
     #define ENABLE_RGB_MATRIX_BREATHING
+    #define ENABLE_RGB_MATRIX_BAND_VAL
+    #define ENABLE_RGB_MATRIX_RAINBOW_MOVING_CHEVRON    
+    #define ENABLE_RGB_MATRIX_CYCLE_OUT_IN_DUAL
+    // #define ENABLE_RGB_MATRIX_CYCLE_SPIRAL
+    // #define ENABLE_RGB_MATRIX_BAND_PINWHEEL_VAL
+    // #define ENABLE_RGB_MATRIX_BAND_SPIRAL_VAL
+    // #define ENABLE_RGB_MATRIX_CYCLE_ALL	Enables
+    // #define ENABLE_RGB_MATRIX_RAINBOW_BEACON
+    // #define ENABLE_RGB_MATRIX_RAINBOW_PINWHEELS
+    // #define ENABLE_RGB_MATRIX_RAINDROPS
+    // #define ENABLE_RGB_MATRIX_HUE_WAVE
+    // #define ENABLE_RGB_MATRIX_PIXEL_FLOW
+    // #define ENABLE_RGB_MATRIX_PIXEL_RAIN
+
+
+
+    // #define ENABLE_RGB_MATRIX_BAND_SPIRAL_SAT
+    // #define ENABLE_RGB_MATRIX_BAND_PINWHEEL_SAT
+    // #define ENABLE_RGB_MATRIX_CYCLE_LEFT_RIGHT
+    // #define ENABLE_RGB_MATRIX_CYCLE_UP_DOWN
+    // #define ENABLE_RGB_MATRIX_ALPHAS_MODS
+    // #define ENABLE_RGB_MATRIX_GRADIENT_UP_DOWN
+    // #define ENABLE_RGB_MATRIX_GRADIENT_LEFT_RIGHT
+    // #define ENABLE_RGB_MATRIX_BAND_SAT
+    // #define ENABLE_RGB_MATRIX_CYCLE_OUT_IN
+    // #define ENABLE_RGB_MATRIX_CYCLE_PINWHEEL
+    // #define ENABLE_RGB_MATRIX_DUAL_BEACON
+    // #define ENABLE_RGB_MATRIX_JELLYBEAN_RAINDROPS
+    // #define ENABLE_RGB_MATRIX_HUE_BREATHING
+    // #define ENABLE_RGB_MATRIX_HUE_PENDULUM
+    // #define ENABLE_RGB_MATRIX_PIXEL_FRACTAL
+
 #endif
