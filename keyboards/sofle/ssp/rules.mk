@@ -1,6 +1,5 @@
 BOOTMAGIC_ENABLE = no	# Virtual DIP switch configuration
 CONSOLE_ENABLE = no		# Console for debug
-EXTRAKEY_ENABLE = yes	# Audio control and System control (+450)
 ENCODER_ENABLE = yes	# Encoders
 NKRO_ENABLE = no		# Has 6KRO+ already. NKRO does not work
 

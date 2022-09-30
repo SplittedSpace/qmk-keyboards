@@ -10,14 +10,7 @@
  * 
  * */
 
-void keyboard_post_init_user(void)
-{
-	#ifdef RGBLIGHT_ENABLE
-		// rgblight_layers = my_rgb_layers;// Enable the LED layers
-		// rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_GRADIENT+8); //Set to static gradient 9
-		// layer_move(0); //start on layer 0 to get the lighting activated
-	#endif
-}
+
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 

@@ -3,3 +3,4 @@ obj_*
 *.elf
 *.map
 .DS_Store
+.vscode

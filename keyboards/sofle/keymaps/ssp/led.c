@@ -21,7 +21,7 @@
 
 // layer_state_t layer_state_set_user(layer_state_t state)
 // {
-//     rgblight_set_layer_state(0, layer_state_cmp(state, 0));    // Multiple layers will light up if both kb layers are active
+//     rgblight_set_layer_state(0, layer_state_cmp(state, 0));// Multiple layers will light up if both kb layers are active
 //     rgblight_set_layer_state(1, layer_state_cmp(state, 1));
 //     rgblight_set_layer_state(2, layer_state_cmp(state, 2));
 //     rgblight_set_layer_state(3, layer_state_cmp(state, 3));
@@ -49,4 +49,28 @@
 //     rgblight_set_layer_state(5, !(led_state.num_lock)); //Invert the indication so numlock does not always appear "on".
 //     rgblight_set_layer_state(6, led_state.scroll_lock); //Activate scrollock lighting layer
 //     return true;
+// }
+
+// void keyboard_post_init_user(void)
+// {
+// 	#ifdef RGBLIGHT_ENABLE
+// 		rgblight_layers = my_rgb_layers;// Enable the LED layers
+// 		rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_LIGHT);
+// 		layer_move(0);
+// 	#endif
+// }
+
+// layer_state_t layer_state_set_user(layer_state_t state) {
+//     switch (get_highest_layer(state)) {
+//         case 1:
+//             rgblight_setrgb(RGB_BLUE);
+//             break;
+//         case 2:
+//             rgblight_setrgb(RGB_RED);
+//             break;
+//         default: // for any other layers, or the default layer
+//             rgblight_setrgb (RGB_WHITE);
+//             break;
+//     }
+//   return state;
 // }

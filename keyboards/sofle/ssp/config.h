@@ -53,11 +53,9 @@
     #define RGB_DI_PIN D3
     #define RGBLED_NUM 72
     #define RGBLED_SPLIT {36,36}
-    //#define RGBLIGHT_ANIMATIONS // Very memory intensive
-    #define RGBLIGHT_EFFECT_STATIC_GRADIENT //Firmware size (+262)
-    #define RGBLIGHT_LIMIT_VAL 150 //Power draw may exceed 0.6A at max brightness with white colour.
-    #define RGBLIGHT_LAYERS
-    #define RGBLIGHT_LAYERS_OVERRIDE_RGB_OFF
+    #define RGBLIGHT_LIMIT_VAL 200
+    // #define RGBLIGHT_LAYERS
+    // #define RGBLIGHT_LAYERS_OVERRIDE_RGB_OFF
     #define RGBLIGHT_SLEEP
 
     //RGB LED Conversion macro from physical array to electric array (+146 to firmware size)
@@ -84,6 +82,21 @@
         0,	9,	12,	21,	24,	33,			40,	49,	52,	61,	64,	73, \
                 11,	22,	23,	34,	35,	38,	39,	50,	51,	62,		    \
                 10,				36,	37,				63		    )
+
+    // #define RGBLIGHT_ANIMATIONS // Very memory intensive
+    #define RGBLIGHT_EFFECT_BREATHING
+    #define RGBLIGHT_EFFECT_ALTERNATING
+    #define RGBLIGHT_EFFECT_RAINBOW_MOOD
+    #define RGBLIGHT_EFFECT_RAINBOW_SWIRL
+
+    // #define RGBLIGHT_EFFECT_CHRISTMAS
+    // #define RGBLIGHT_EFFECT_KNIGHT
+    // #define RGBLIGHT_EFFECT_SNAKE
+    // #define RGBLIGHT_EFFECT_TWINKLE
+
+    // #define RGBLIGHT_EFFECT_RGB_TEST
+    // #define RGBLIGHT_EFFECT_STATIC_GRADIENT
+
 #endif
 
 #ifdef RGB_MATRIX_ENABLE
@@ -102,8 +115,8 @@
     
     #define ENABLE_RGB_MATRIX_BREATHING
     #define ENABLE_RGB_MATRIX_BAND_VAL
-    #define ENABLE_RGB_MATRIX_RAINBOW_MOVING_CHEVRON    
-    #define ENABLE_RGB_MATRIX_CYCLE_OUT_IN_DUAL
+    // #define ENABLE_RGB_MATRIX_RAINBOW_MOVING_CHEVRON    
+    // #define ENABLE_RGB_MATRIX_CYCLE_OUT_IN_DUAL
     // #define ENABLE_RGB_MATRIX_CYCLE_SPIRAL
     // #define ENABLE_RGB_MATRIX_BAND_PINWHEEL_VAL
     // #define ENABLE_RGB_MATRIX_BAND_SPIRAL_VAL
