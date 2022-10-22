@@ -116,19 +116,17 @@ static void print_light_status(void) {
 
     oled_set_cursor(0, 14);
     oled_write_raw_P(icon_brightness1, sizeof(icon_brightness1));
-    // oled_set_cursor(0, 6);
-    // oled_write_raw_P(icon_brightness2, sizeof(icon_brightness2));
     oled_set_cursor(8, 13);
 
 
     int val = 0;
     
     #ifdef RGB_MATRIX_ENABLE
-        val = scale(rgb_matrix_get_val(), 0, 200, 0, 99);
+        val = scale(rgb_matrix_get_val(), 0, RGBLIGHT_LIMIT_VAL, 0, 99);
     #endif
 
     #ifdef RGBLIGHT_ENABLE
-        val = scale(rgblight_get_val(), 0, 200, 0, 99);
+        val = scale(rgblight_get_val(), 0, RGBLIGHT_LIMIT_VAL, 0, 99);
     #endif
     
     char str[2];  

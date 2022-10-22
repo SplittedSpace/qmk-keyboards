@@ -22,8 +22,8 @@
 #ifdef ENCODER_ENABLE
     #define ENCODERS_PAD_A { F4 }
     #define ENCODERS_PAD_B { F5 }
-    #define ENCODERS_PAD_A_RIGHT { F5 }
-    #define ENCODERS_PAD_B_RIGHT { F4 }
+    #define ENCODERS_PAD_A_RIGHT { F4 }
+    #define ENCODERS_PAD_B_RIGHT { F5 }
     #define ENCODER_RESOLUTION 4
 #endif
 
@@ -51,9 +51,14 @@
 
 #ifdef RGBLIGHT_ENABLE
     #define RGB_DI_PIN D3
-    #define RGBLED_NUM 72
+    #define RGBLED_NUM 74
     #define RGBLED_SPLIT {36,36}
-    #define RGBLIGHT_LIMIT_VAL 200
+    #define RGBLIGHT_LIMIT_VAL 160
+    #define RGBLIGHT_DEFAULT_VAL 120
+    #define RGBLIGHT_VAL_STEP 5
+    #define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_RAINBOW_SWIRL
+    #define RGBLIGHT_DEFAULT_SPD 120
+    #define RGBLIGHT_SPLIT
     // #define RGBLIGHT_LAYERS
     // #define RGBLIGHT_LAYERS_OVERRIDE_RGB_OFF
     #define RGBLIGHT_SLEEP
@@ -103,7 +108,7 @@
     #define VIALRGB_NO_DIRECT
     #define RGBLED_NUM 72
     #define DRIVER_LED_TOTAL RGBLED_NUM
-    #define RGB_MATRIX_MAXIMUM_BRIGHTNESS 220
+    #define RGB_MATRIX_MAXIMUM_BRIGHTNESS 255
     #define RGB_MATRIX_HUE_STEP 8
     #define RGB_MATRIX_SAT_STEP 8
     #define RGB_MATRIX_VAL_STEP 8
