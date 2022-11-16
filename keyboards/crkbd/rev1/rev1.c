@@ -93,4 +93,10 @@ void suspend_wakeup_init_kb(void) {
     rgb_matrix_set_suspend_state(false);
     suspend_wakeup_init_user();
 }
+
 #endif
+
+// void matrix_init_kb(void) {
+//     DDRD &= ~(1<<5); PORTD &= ~(1<<5);
+//     DDRB &= ~(1<<0); PORTB &= ~(1<<0);
+// }
