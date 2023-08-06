@@ -4,3 +4,5 @@ obj_*
 *.map
 .DS_Store
 .vscode
+.vial-qmk
+.build

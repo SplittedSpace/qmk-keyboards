@@ -41,6 +41,7 @@
 #define SERIAL_USE_MULTI_TRANSACTION
 #define SOFT_SERIAL_PIN D2
 
+
 #ifdef OLED_ENABLE
 	#define OLED_TIMEOUT 80000
 	#define OLED_BRIGHTNESS 90
@@ -55,9 +56,9 @@
 
 #ifdef RGBLIGHT_ENABLE
     #define RGB_DI_PIN D3
-    #define RGBLED_NUM 74
-    #define RGBLED_SPLIT {36,36}
-    #define RGBLIGHT_LIMIT_VAL 130
+    #define RGBLED_NUM 58
+    #define RGBLED_SPLIT {29,29}
+    #define RGBLIGHT_LIMIT_VAL 140
     #define RGBLIGHT_DEFAULT_VAL 120
     #define RGBLIGHT_VAL_STEP 5
     #define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_RAINBOW_SWIRL
@@ -67,36 +68,30 @@
 
     #define LED_LAYOUT( \
         L00,	L01,	L02,	L03,	L04,	L05,					L08,	L09,	L010,	L011,	L012,	L013, \
-        L10,			L12,			L14,									L19,			L111,			L113, \
+        L10,	L11,	L12,	L13,	L14,	L15,					L18,	L19,	L110,	L111,	L112,	L113, \
         L20,	L21,	L22,	L23,	L24,	L25,					L28,	L29,	L210,	L211,	L212,	L213, \
         L30,	L31,	L32,	L33,	L34,	L35,					L38,	L39,	L310,	L311,	L312,	L313, \
-        L40,			L42,			L44,									L49,			L411,			L413, \
-        L50,	L51,	L52,	L53,	L54,	L55,					L58,	L59,	L510,	L511,	L512,	L513, \
-                        L62,	L63,	L64,	L65,	L66,	L67,	L68,	L69,	L610,	L611,				  \
-                L71,									L76,	L77,									L712		 )\
+                        L42,	L43,	L44,	L45,	L46,	L47,	L48,	L49,	L410,	L411				  \
+        )\
         { \
-            L71,L10,L12,L14,L44,L42,L40,\
-            L62,L50,L30,L20,L00,L01,L21,L31,L51,L63,L64,L52,L32,L22,L02,L03,L23,L33,L53,L66,L76,L54,L34,L24,L04,L05,L25,L35,L55,\
-            L712,L113,L111,L19,L49,L411,L413,\
-            L611,L513,L313,L213,L013,L012,L212,L312,L512,L610,L69,L511,L311,L211,L011,L010,L210,L310,L510,L67,L77,L59,L39,L29,L09,L08,L28,L38,L58 \
+            L05,L15,L25,L35,L46,L45,L44,L34,L24,L14,L04,L03,L13,L23,L33,L43,L42,L32,L22,L12,L02,L01,L11,L21,L31,L30,L20,L10,L00,\
+            L08,L18,L28,L38,L47,L48,L49,L39,L29,L19,L09,L010,L110,L210,L310,L410,L411,L311,L211,L111,L011,L012,L112,L212,L312,L313,L213,L113,L013\
         }
     #define RGBLIGHT_LED_MAP LED_LAYOUT( \
-        3,  4,  14, 15, 26, 27,       46, 47, 57, 58, 68, 69, \
-            5,      16,     28,       45,     56,     67,     \
-        2,  6,  13, 17, 25, 29,       44, 48, 55, 59, 66, 70, \
-        1,  7,  12, 18, 24, 30,       43, 49, 54, 60, 65, 71, \
-            9,      20,     35,       38,     53,     63,     \
-        0,  8,  11, 19, 23, 32,       41, 50, 52, 61, 64, 72, \
-            10, 21, 22, 33, 34,       39, 40, 51, 51, 62,     \
-            31,                36, 37,                42      )
-
+        3,  4,  12, 13, 22, 23,          34, 35, 44, 45, 53, 54, \
+        2,  5,  11, 14, 21, 24,          33, 36, 43, 46, 52, 55, \
+        1,  6,  10, 15, 20, 25,          32, 37, 42, 47, 51, 56, \
+        0,  7,  9,  16, 19, 26,          31, 38, 41, 48, 50, 57, \
+                8,  17, 18, 27, 28,  29, 30, 39, 40, 49     \
+    )
+    
     #define RGBLIGHT_EFFECT_BREATHING
-    #define RGBLIGHT_EFFECT_ALTERNATING
     #define RGBLIGHT_EFFECT_RAINBOW_MOOD
     #define RGBLIGHT_EFFECT_RAINBOW_SWIRL
 
     #ifndef OLED_ENABLE
         #ifndef TAP_DANCE_ENABLE
+            #define RGBLIGHT_EFFECT_ALTERNATING
             #define RGBLIGHT_EFFECT_CHRISTMAS
             #define RGBLIGHT_EFFECT_KNIGHT
             #define RGBLIGHT_EFFECT_SNAKE

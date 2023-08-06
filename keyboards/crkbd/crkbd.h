@@ -17,11 +17,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #pragma once
 
-#ifdef KEYBOARD_crkbd_rev1
-#    include "rev1.h"
-#endif
-#ifdef KEYBOARD_crkbd_r2g
-#    include "r2g.h"
+#ifdef KEYBOARD_crkbd_ssp
+#    include "ssp.h"
 #endif
 
 

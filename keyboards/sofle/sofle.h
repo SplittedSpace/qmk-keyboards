@@ -6,4 +6,6 @@
 #    include "keyhive.h"
 #elif defined(KEYBOARD_sofle_ssp)
 #    include "ssp.h"
+#elif defined(KEYBOARD_sofle_ssp_choc)
+#    include "ssp_choc.h"
 #endif
