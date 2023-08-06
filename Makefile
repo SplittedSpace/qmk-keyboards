@@ -1,8 +1,8 @@
 
 install:
 	git submodule update --init --recursive
-	rm -rf vial-qmk/keyboards
-	ln -s $(shell pwd)/keyboards vial-qmk/keyboards
+	rm -rf .vial-qmk/keyboards
+	ln -s $(shell pwd)/keyboards .vial-qmk/keyboards
 
 build:
 	if [ ! -d "$(shell pwd)/.build" ]; then mkdir $(shell pwd)/.build; fi
