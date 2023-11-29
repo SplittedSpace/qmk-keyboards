@@ -47,3 +47,18 @@ For example:
 % qmk compile -kb lea/v1 -km base
 ```
 
+## How to flash firmware to a keyboard
+
+For flashing the firmware we recommend using [QMK Toolbox](https://github.com/qmk/qmk_toolbox)
+
+1. Prepare a firmware:
+   * If you`re going to use pre-build firmware:
+      1. Go to a [relases page](https://github.com/SplittedSpace/vial-qmk-keyboards/releases)
+      2. Choose the appropriate .hex (or .bin) file; all files are prefixed with the exact keyboard model, also the readme describes the firmware details
+      3. Download firmware to your compouter
+   * Otherwise compile firmware as described above
+2. Open QMK Toolbox and choose in "Local file" the previously downloaded firmware
+3. Connect your keyboard to USB
+4. Find the Reset button on your keyboard and press it.  May need one or two pressing
+5. Press the "Flash" button and wait until the firmware is flashed
+6. Enjoy)
