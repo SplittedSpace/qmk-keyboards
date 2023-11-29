@@ -1,61 +1,49 @@
-# Vial-compatible QMK firmwares for SplittedSpace keyboards
+# Vial-compatible QMK firmware for splitted.space keyboards
 
-## How to
+This repository provides configuration files for building your own firmware based on QMK. More about QMK itself you can read at the [official page](https://qmk.fm/).
+To learn all the intricacies of configuring the firmware, refer to the official [documentation](https://docs.qmk.fm/#/).
 
+By default, we use a slightly modified version of QMK which supports the keyboards configuration over [Vial](https://get.vial.today/) that helps to use all the QMK`s power in customization. But if for some reason, for example, to leave some extra memory space on your keyboard you want to come back to the original QMK firmware you need to change the repository link during setup.
+
+## Preparation
+
+1. Download this repository to your computer
+2. Refer to [original docs](https://docs.qmk.fm/#/newbs_getting_started?id=set-up-your-environment) to see the instructions how to prepare build environment
+
+## Setup
+
+1. Setup QMK. This will install the QMK to your home directory:
+   ```
+   % qmk setup -b vial https://github.com/vial-kb/vial-qmk
+   ```
+   
+2. Go to the folder where the current repository was downloaded and replace QMK keyboards folder with the link to the keyboards of us:
+   ```
+   ## Linux / MacOS
+
+    % rm -rf ~/qmk_firmware/keyboards
+    % cd vial-qmk-keyboards
+    % ln -s $(pwd)/keyboards ~/qmk_firmware/keyboards
+
+   ## Windows
+
+    % TBC
+
+   ```
+3. Ensure keyboards are mapped properly. You should see the list of our keyboards:
+   ```
+   % qmk list-keyboards
+   ``` 
+
+## Build
+
+Now you are ready to build you own firmware. To do this chose needed keyboard/keymap and run:
 ```
-# Prepare for building
-make install
-
-# Build keyboard
-make kb=crkbd/rev1 km=vial build
-
+% qmk compile -kb __keyboard__ -km __keymap__
 ```
 
-
-### Possible keyboards
-
+For example:
 ```
-# Sofle
-make kb=sofle/ssp km=ssp_high_encoder build && mv ./.build/sofle_ssp_ssp_high_encoder.hex ../qmk-firmware-releases/sofle/sofle_vial_high_encoder__deprecated.hex
-make kb=sofle/ssp km=ssp build && mv ./.build/sofle_ssp_ssp.hex ../qmk-firmware-releases/sofle/sofle_vial.hex
-make kb=sofle/ssp km=ssp_no_oled build && mv ./.build/sofle_ssp_ssp_no_oled.hex ../qmk-firmware-releases/sofle/sofle_vial_no_oled.hex
-make kb=sofle/ssp km=ssp_full_rgb build && mv ./.build/sofle_ssp_ssp_full_rgb.hex ../qmk-firmware-releases/sofle/sofle_vial_full_rgb.hex
-
-# Sofle Choc
-make kb=sofle/ssp_choc km=ssp_full_rgb build && mv ./.build/sofle_ssp_choc_ssp_full_rgb.hex ../qmk-firmware-releases/sofle/sofle_choc_vial_full_rgb.hex
-make kb=sofle/ssp_choc km=ssp_no_oled build && mv ./.build/sofle_ssp_choc_ssp_no_oled.hex ../qmk-firmware-releases/sofle/sofle_choc_vial.hex
-
-# Corne
-make kb=crkbd/ssp km=ssp_all_leds build && mv ./.build/crkbd_ssp_ssp_all_leds.hex ../qmk-firmware-releases/corne/corne_vial.hex
-make kb=crkbd/ssp km=ssp_underglow build && mv ./.build/crkbd_ssp_ssp_underglow.hex ../qmk-firmware-releases/corne/corne_vial_underglow.hex
-
-make kb=crkbd/ssp km=ssp_all_leds_no_oled build && mv ./.build/crkbd_ssp_ssp_all_leds_no_oled.hex ../qmk-firmware-releases/corne/corne_vial_no_oled.hex
-make kb=crkbd/ssp km=ssp_underglow_no_oled build && mv ./.build/crkbd_ssp_ssp_underglow_no_oled.hex ../qmk-firmware-releases/corne/corne_vial_underglow_no_oled.hex
-
-
-# Corne Choc
-make kb=crkbd/ssp km=ssp_all_leds build && mv ./.build/crkbd_ssp_ssp_all_leds.hex ../qmk-firmware-releases/corne/corne_choc_vial.hex
-make kb=crkbd/ssp km=ssp_all_leds_no_oled build && mv ./.build/crkbd_ssp_ssp_all_leds_no_oled.hex ../qmk-firmware-releases/corne/corne_choc_vial_no_oled.hex
-
-# M1
-make kb=m_one km=default build && mv ./.build/m_one_default.hex ../qmk-firmware-releases/m_one/m_one_vial.hex
+% qmk compile -kb lea/v1 -km base
 ```
-
-
-
-
-#include "quantum.h"
-
-#define LAYOUT( \
-    L00, L01, L02, L03, \
-    L10, L11, L12, L13, \
-    L20, L21, L22, L23, \
-    L30, L31, L32, L33 \
-    ) \
-    { \
-        { L00, L01, L02, L03 }, \
-        { L10, L11, L12, L13 }, \
-        { L20, L21, L22, L23 }, \
-        { L30, L31, L32, L33 } \
-    }
 

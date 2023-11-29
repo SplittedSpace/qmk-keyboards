@@ -26,9 +26,9 @@
     },
     "encoder": {
         "rotary": [
-            { "pin_a": "B7", "pin_b": "B6", "resolution": 2 },
+            { "pin_a": "B14", "pin_b": "B15", "resolution": 2 },
             { "pin_a": "B4", "pin_b": "B13", "resolution": 2 },
-            { "pin_a": "B14", "pin_b": "B15", "resolution": 2 }
+            { "pin_a": "B7", "pin_b": "B6", "resolution": 2 }
         ]
     },
     "layouts": {

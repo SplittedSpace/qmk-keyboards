@@ -11,12 +11,12 @@
   "layouts": {
     "LAYOUT_split_3x6_3": {
       "layout": [
-        {"label":"Esc", "x":0, "y":0.3},
-        {"label":"Q", "x":1, "y":0.3},
-        {"label":"W", "x":2, "y":0.1},
-        {"label":"E", "x":3, "y":0},
-        {"label":"R", "x":4, "y":0.1},
-        {"label":"T", "x":5, "y":0.2},
+        {"label":"Esc", "x":0, "y":0.3, "matrix": [0,0]},
+        {"label":"Q", "x":1, "y":0.3, "matrix": [0,1]},
+        {"label":"W", "x":2, "y":0.1, "matrix": [0,2]},
+        {"label":"E", "x":3, "y":0, "matrix": [0,3]},
+        {"label":"R", "x":4, "y":0.1, "matrix": [0,4]},
+        {"label":"T", "x":5, "y":0.2, "matrix": [0,5]},
 
         {"label":"Y", "x":9, "y":0.2},
         {"label":"U", "x":10, "y":0.1},

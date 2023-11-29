@@ -1,7 +1,7 @@
 
 #pragma once
 
-#define DYNAMIC_KEYMAP_LAYER_COUNT 1
+#define DYNAMIC_KEYMAP_LAYER_COUNT 4
 
 #define VIAL_KEYBOARD_UID { 0x05, 0xCD, 0x9F, 0x8A, 0xF4, 0xDF, 0xDE, 0xC3 }
 
@@ -21,7 +21,6 @@
 
 #ifdef RGB_MATRIX_ENABLE
     #define RGBLED_NUM 20
-    #define RGB_DI_PIN A5
     #define WS2812_DI_PIN A5
     #define DRIVER_LED_TOTAL RGBLED_NUM
     #define RGB_MATRIX_LED_COUNT RGBLED_NUM

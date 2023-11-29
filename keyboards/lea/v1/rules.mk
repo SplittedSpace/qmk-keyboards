@@ -1,0 +1,2 @@
+SERIAL_DRIVER = usart
+RGB_MATRIX_ENABLE = yes
