@@ -7,7 +7,7 @@ By default, we use a slightly modified version of QMK which supports the keyboar
 
 ## Use a pre-built firmware
 
-If you want to get pre-built ready for use firmware for your keyboard please refer to our [relases page](https://github.com/splitted.space/vial-qmk-keyboards/releases)
+If you want to get pre-built ready for use firmware for your keyboard please refer to our [relases page](https://github.com/splitted.space/qmk-keyboards/releases)
 
 ## Make your own firmware
 
@@ -59,7 +59,7 @@ For flashing the firmware we recommend using [QMK Toolbox](https://github.com/qm
 
 1. Prepare a firmware:
    * `If you're going to use pre-build firmware`:
-      1. Go to a [relases page](https://github.com/splitted.space/vial-qmk-keyboards/releases)
+      1. Go to a [relases page](https://github.com/splitted.space/qmk-keyboards/releases)
       2. Choose the appropriate .hex (or .bin) file; all files are prefixed with the exact keyboard model, also the readme describes the firmware details
       3. Download firmware to your compouter
    * `Otherwise compile firmware as described above`
