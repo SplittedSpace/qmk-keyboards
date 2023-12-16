@@ -58,13 +58,23 @@ For example:
 For flashing the firmware we recommend using [QMK Toolbox](https://github.com/qmk/qmk_toolbox)
 
 1. Prepare a firmware:
-   * If you`re going to use pre-build firmware:
+   * `If you're going to use pre-build firmware`:
       1. Go to a [relases page](https://github.com/splitted.space/vial-qmk-keyboards/releases)
       2. Choose the appropriate .hex (or .bin) file; all files are prefixed with the exact keyboard model, also the readme describes the firmware details
       3. Download firmware to your compouter
-   * Otherwise compile firmware as described above
+   * `Otherwise compile firmware as described above`
 2. Open QMK Toolbox and choose in "Local file" the previously downloaded firmware
 3. Connect your keyboard to USB
-4. Find the Reset button on your keyboard and press it.  May need one or two pressing
+4. Find the Reset button on your keyboard and press it.  May need one or two pressing depends on keyboard hardware.
 5. Press the "Flash" button and wait until the firmware is flashed
-6. Enjoy)
+6. If your keyboard is a split and have more than one part, repeat steps 4-5 for each parts
+7. Enjoy :)
+
+
+## Useful information about the hardware
+
+### Arduino
+If your keyboard has an Arduino installed on the shield then it is Atmega32u4 controller with Caterina bootloader that should be used for firmware.
+
+### Leds
+All the boards have WS2812/SK6812 diodes for RGB lighting. Optionally if your board has only the bottom lighting RGBW setting should be used in QMK configuration.

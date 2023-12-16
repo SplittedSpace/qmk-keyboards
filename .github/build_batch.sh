@@ -2,6 +2,7 @@
 
 DIST_FOLDER="./.build"
 BUILD_FOLDER="$(eval echo ~$USER)/qmk_firmware/.build"
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 DATE_S=$(date +%F)
 
 compress () {
@@ -34,8 +35,8 @@ qmk compile -kb crkbd/ssp -km ssp_underglow_no_oled && mv $BUILD_FOLDER/crkbd_ss
 qmk compile -kb crkbd/ssp -km ssp_all_leds          && mv $BUILD_FOLDER/crkbd_ssp_ssp_all_leds.hex              $DIST_FOLDER/corne_choc_vial.hex
 qmk compile -kb crkbd/ssp -km ssp_all_leds_no_oled  && mv $BUILD_FOLDER/crkbd_ssp_ssp_all_leds_no_oled.hex      $DIST_FOLDER/corne_choc_vial_no_oled.hex
 
-cp ./corne_versions.txt $BUILD_FOLDER/versions.txt
-compress "corne" "versions.txt corne_vial.hex corne_vial_underglow.hex corne_vial_no_oled.hex corne_vial_underglow_no_oled.hex corne_choc_vial.hex corne_choc_vial_no_oled.hex"
+cp $SCRIPT_DIR/corne_versions.md $DIST_FOLDER/versions.md
+compress "corne" "versions.md corne_vial.hex corne_vial_underglow.hex corne_vial_no_oled.hex corne_vial_underglow_no_oled.hex corne_choc_vial.hex corne_choc_vial_no_oled.hex"
 
 # Sofle
 # qmk compile -kb sofle/ssp -km ssp_high_encoder          && mv $BUILD_FOLDER/sofle_ssp_ssp_high_encoder.hex      $DIST_FOLDER/sofle_vial_high_encoder__deprecated.hex
@@ -47,5 +48,5 @@ compress "corne" "versions.txt corne_vial.hex corne_vial_underglow.hex corne_via
 # qmk compile -kb sofle/ssp_choc -km ssp_full_rgb        && mv $BUILD_FOLDER/sofle_ssp_choc_ssp_full_rgb.hex      $DIST_FOLDER/sofle_choc_vial_full_rgb.hex
 # qmk compile -kb sofle/ssp_choc -km ssp_no_oled         && mv $BUILD_FOLDER/sofle_ssp_choc_ssp_no_oled.hex       $DIST_FOLDER/sofle_choc_vial.hex
 
-# cp ./sofle_versions.txt $BUILD_FOLDER/versions.txt
-# compress "sofle" "versions.txt sofle_vial_high_encoder__deprecated.hex sofle_vial.hex sofle_vial_no_oled.hex sofle_vial_full_rgb.hex sofle_choc_vial_full_rgb.hex sofle_choc_vial.hex"
+# cp $SCRIPT_DIR/sofle_versions.md $BUILD_FOLDER/versions.md
+# compress "sofle" "versions.md sofle_vial_high_encoder__deprecated.hex sofle_vial.hex sofle_vial_no_oled.hex sofle_vial_full_rgb.hex sofle_choc_vial_full_rgb.hex sofle_choc_vial.hex"
