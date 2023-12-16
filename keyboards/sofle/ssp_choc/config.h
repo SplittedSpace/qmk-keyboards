@@ -11,7 +11,7 @@
 #define VENDOR_ID       0xFC32
 #define PRODUCT_ID      0x0287
 #define DEVICE_VER      0x0007
-#define MANUFACTURER    SplittedSpace
+#define MANUFACTURER    splitted.space
 #define PRODUCT         Sofle
 
 #define MASTER_LEFT

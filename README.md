@@ -5,12 +5,18 @@ To learn all the intricacies of configuring the firmware, refer to the official 
 
 By default, we use a slightly modified version of QMK which supports the keyboards configuration over [Vial](https://get.vial.today/) that helps to use all the QMK`s power in customization. But if for some reason, for example, to leave some extra memory space on your keyboard you want to come back to the original QMK firmware you need to change the repository link during setup.
 
-## Preparation
+## Use a pre-built firmware
+
+If you want to get pre-built ready for use firmware for your keyboard please refer to our [relases page](https://github.com/splitted.space/vial-qmk-keyboards/releases)
+
+## Make your own firmware
+
+### Preparation
 
 1. Download this repository to your computer
 2. Refer to [original docs](https://docs.qmk.fm/#/newbs_getting_started?id=set-up-your-environment) to see the instructions how to prepare build environment
 
-## Setup
+### Setup
 
 1. Setup QMK. This will install the QMK to your home directory:
    ```
@@ -35,7 +41,7 @@ By default, we use a slightly modified version of QMK which supports the keyboar
    % qmk list-keyboards
    ``` 
 
-## Build
+### Build
 
 Now you are ready to build you own firmware. To do this chose needed keyboard/keymap and run:
 ```
@@ -53,7 +59,7 @@ For flashing the firmware we recommend using [QMK Toolbox](https://github.com/qm
 
 1. Prepare a firmware:
    * If you`re going to use pre-build firmware:
-      1. Go to a [relases page](https://github.com/SplittedSpace/vial-qmk-keyboards/releases)
+      1. Go to a [relases page](https://github.com/splitted.space/vial-qmk-keyboards/releases)
       2. Choose the appropriate .hex (or .bin) file; all files are prefixed with the exact keyboard model, also the readme describes the firmware details
       3. Download firmware to your compouter
    * Otherwise compile firmware as described above

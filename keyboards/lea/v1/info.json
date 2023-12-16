@@ -1,7 +1,7 @@
 {
-    "manufacturer": "SplittedSpace",
+    "manufacturer": "splitted.space",
     "keyboard_name": "Lea",
-    "maintainer": "SplittedSpace",
+    "maintainer": "splitted.space",
     "bootloader": "stm32-dfu",
     "diode_direction": "COL2ROW",
     "features": {
