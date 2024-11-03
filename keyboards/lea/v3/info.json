@@ -33,19 +33,23 @@
         ]
     },
     "ws2812": {
-        "pin": "A4"
+        "pin": "A3",
+        "driver": "pwm"
     },
     "rgb_matrix": {
         "driver": "ws2812",
         "max_brightness": 170,
-        "split_count": [35, 35],
+        "split_count": [43, 43],
         "val_steps": 5,
+        "default": {
+            "val": 140
+        },
         "speed_steps": 5
     },
     "split": {
         "enabled": true,
         "transport": {
-            "protocol": "serial"
+            "protocol": "serial_usart"
         },
         "encoder": {
             "right": {

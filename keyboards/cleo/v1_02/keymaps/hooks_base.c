@@ -1,15 +1,4 @@
-/**
- * 
- * keyboard_pre_init_* - Happens before most anything is started. Good for hardware setup that you want running very early.
- * matrix_init_* - Happens midway through the firmware’s startup process. Hardware is initialized, but features may not be yet.
- * keyboard_post_init_* - Happens at the end of the firmware’s startup process. This is where you’d want to put “customization” code, for the most part.
- * 
- * 
- * 
- * 
- * 
- * */
-
+void hooks_housekeeping_task_user(void);
 
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -21,8 +10,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
-void housekeeping_task_user() {
-    
+void hooks_housekeeping_task_user() {
     #ifdef RGB_MATRIX_ENABLE
         int val = rgb_matrix_get_val();
         if (val > RGB_MATRIX_MAXIMUM_BRIGHTNESS) {
