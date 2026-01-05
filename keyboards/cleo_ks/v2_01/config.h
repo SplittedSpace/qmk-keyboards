@@ -63,7 +63,7 @@
     #define WS2812_T0H 300
     #define WS2812_T1H 950
 
-    #define RGBLED_NUM 62
+    #define RGBLED_NUM 42
     #define DRIVER_LED_TOTAL RGBLED_NUM
     #define RGB_MATRIX_LED_COUNT RGBLED_NUM
     

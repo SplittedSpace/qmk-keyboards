@@ -8,7 +8,7 @@ DATE_S=$(date +%F)
 compress () {
     n=($2)
     zip -j ./.build/$1_$DATE_S.zip "${n[@]/#/$DIST_FOLDER/}"
-    rm "${n[@]/#/$DIST_FOLDER/}"
+    # rm "${n[@]/#/$DIST_FOLDER/}"
 }
 
 
@@ -23,26 +23,29 @@ qmk compile -kb lea/v1 -km lcd                  && cp $BUILD_FOLDER/lea_v1_lcd.b
 
 qmk compile -kb lea_choc/v1 -km base            && cp $BUILD_FOLDER/lea_choc_v1_base.bin $DIST_FOLDER/LC1-01__$DATE_S.bin
 
-compress "lea" "lea_versions.md LA1-01__$DATE_S.bin LA2-01__$DATE_S.bin LA3-01__$DATE_S.bin LA1-02__$DATE_S.bin LA1-03__$DATE_S.bin"
-compress "lea_choc" "lea_choc_versions.md LC1-01__$DATE_S.bin"
+compress "lea" "../.github/lea_versions.md LA1-01__$DATE_S.bin LA2-01__$DATE_S.bin LA3-01__$DATE_S.bin LA1-02__$DATE_S.bin LA1-03__$DATE_S.bin"
+compress "lea_choc" "../.github/lea_choc_versions.md LC1-01__$DATE_S.bin"
 
 # Cleo
 qmk compile -kb cleo/v1_01 -km base              && cp $BUILD_FOLDER/cleo_v1_01_base.bin $DIST_FOLDER/CL1-01__$DATE_S.bin
 qmk compile -kb cleo/v1_02 -km base              && cp $BUILD_FOLDER/cleo_v1_02_base.bin $DIST_FOLDER/CL1-02__$DATE_S.bin
 qmk compile -kb cleo/v2_02 -km base              && cp $BUILD_FOLDER/cleo_v2_02_base.bin $DIST_FOLDER/CL2-02__$DATE_S.bin
+qmk compile -kb cleo/v3_02 -km base              && cp $BUILD_FOLDER/cleo_v3_02_base.bin $DIST_FOLDER/CL3-02__$DATE_S.bin
 
 qmk compile -kb cleo_ks/v2_01 -km base           && cp $BUILD_FOLDER/cleo_ks_v2_01_base.bin $DIST_FOLDER/CK2-01__$DATE_S.bin
 
-compress "cleo" "cleo_versions.md CL1-01__$DATE_S.bin CL1-02__$DATE_S.bin CL2-02__$DATE_S.bin"
-compress "cleo_ks" "cleo_ks_versions.md CK2-01__$DATE_S.bin"
+compress "cleo" "../.github/cleo_versions.md CL1-01__$DATE_S.bin CL1-02__$DATE_S.bin CL2-02__$DATE_S.bin CL3-02__$DATE_S.bin"
+compress "cleo_ks" "../.github/cleo_ks_versions.md CK2-01__$DATE_S.bin"
 
-# M1 + 
+# M1
 qmk compile -kb m_one/v1 -km base               && cp $BUILD_FOLDER/m_one_v1_base.bin $DIST_FOLDER/MM1-01__$DATE_S.bin
 qmk compile -kb m_one/v1 -km midi               && cp $BUILD_FOLDER/m_one_v1_midi.bin $DIST_FOLDER/MM1-01_midi__$DATE_S.bin
 qmk compile -kb m_one/v2 -km base               && cp $BUILD_FOLDER/m_one_v2_base.bin $DIST_FOLDER/MM2-01__$DATE_S.bin
 qmk compile -kb m_one/v2 -km midi               && cp $BUILD_FOLDER/m_one_v2_midi.bin $DIST_FOLDER/MM2-01_midi__$DATE_S.bin
 
-compress "m_one" "m_one_versions.md MM1-01__$DATE_S.bin MM1-01_midi__$DATE_S.bin MM2-01__$DATE_S.bin MM2-01_midi__$DATE_S.bin"
+compress "m_one" "../.github/m_one_versions.md MM1-01__$DATE_S.bin MM1-01_midi__$DATE_S.bin MM2-01__$DATE_S.bin MM2-01_midi__$DATE_S.bin"
+
+
 
 # Corne
 # qmk compile -kb crkbd/ssp -km ssp_all_leds          && mv $BUILD_FOLDER/crkbd_ssp_ssp_all_leds.hex              $DIST_FOLDER/corne_vial.hex

@@ -7,7 +7,9 @@ By default, we use a slightly modified version of QMK which supports the keyboar
 
 ## Use a pre-built firmware
 
-If you want to get pre-built ready for use firmware for your keyboard please refer to our [relases page](https://github.com/splitted.space/qmk-keyboards/releases)
+If you want to get pre-built ready for use firmware for your keyboard please refer to our [relases page](https://github.com/SplittedSpace/qmk-keyboards/releases)
+
+You should download an archive for your keyboard and choose the correct version of the firmware - each archive includes versions.md file which describes how exactly the version can be chosen.
 
 ## Make your own firmware
 
