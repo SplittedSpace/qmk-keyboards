@@ -2,6 +2,14 @@
 
 #define SPLIT_HAND_PIN B5
 
+// Cold boot: some hosts take longer than the default 2 s to enumerate USB
+// during POST, so the connected half wrongly decides it is the slave and the
+// keyboard stays dead until the cable is replugged. Wait longer for USB and
+// let an orphaned slave reset itself via the watchdog.
+#define SPLIT_USB_TIMEOUT 5000
+#define SPLIT_USB_TIMEOUT_POLL 10
+#define SPLIT_WATCHDOG_ENABLE
+
 #define SERIAL_USART_FULL_DUPLEX
 #define SERIAL_USART_TX_PIN A9
 #define SERIAL_USART_RX_PIN A10
